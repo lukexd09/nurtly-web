@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout
+  title="Nurtly Privacy"
+  description="Draft language gateway for Nurtly privacy."
+  lang="en"
+  path="/privacy"
+  hreflangEn="/privacy/en"
+  hreflangPl="/privacy/pl"
+>
+  <main class="card">
+    <p style="margin-top: 0; color: var(--sage-dark); font-weight: 700;">Draft</p>
+    <p>This page redirects to the privacy policy based on your browser language.</p>
+    <p>
+      <a href="/privacy/en">English privacy policy</a>
+      <br />
+      <a href="/privacy/pl">Polish privacy policy</a>
+    </p>
+  </main>
+  <script is:inline>
+    const target = navigator.language && navigator.language.toLowerCase().startsWith("pl") ? "/privacy/pl" : "/privacy/en";
+    window.location.replace(target);
+  </script>
+</BaseLayout>

@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
+import PolicyPage from "../../components/PolicyPage.astro";
+import { privacyContent } from "../../data/privacy";
+import { site } from "../../data/site";
+---
+<BaseLayout title={privacyContent.en.title} description={privacyContent.en.description} lang="en" path="/privacy/en" hreflangEn="/privacy/en" hreflangPl="/privacy/pl">
+  <LanguageSwitcher currentLang="en" enHref="/privacy/en" plHref="/privacy/pl" />
+  <Header title={privacyContent.en.title} draftLabel="Draft" versionLabel={site.version} updatedLabel={site.updated} />
+  <PolicyPage intro={privacyContent.en.intro} sections={privacyContent.en.sections} />
+  <Footer product={site.product} operator={site.operator} email={site.email} />
+</BaseLayout>

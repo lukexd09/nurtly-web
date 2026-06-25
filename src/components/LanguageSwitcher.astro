@@ -1,0 +1,9 @@
+---
+const { currentLang, enHref, plHref } = Astro.props;
+---
+<nav aria-label="Language switcher" class="card" style="margin-bottom: 1rem;">
+  <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+    <a href={enHref} aria-current={currentLang === "en" ? "page" : undefined}>English</a>
+    <a href={plHref} aria-current={currentLang === "pl" ? "page" : undefined}>Polski</a>
+  </div>
+</nav>

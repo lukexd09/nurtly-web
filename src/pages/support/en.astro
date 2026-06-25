@@ -5,11 +5,10 @@ import Footer from "../../components/Footer.astro";
 import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
 import SupportPage from "../../components/SupportPage.astro";
 import { supportContent } from "../../data/support";
-import { site } from "../../data/site";
 ---
 <BaseLayout title={supportContent.en.title} description={supportContent.en.description} lang="en" path="/support/en" hreflangEn="/support/en" hreflangPl="/support/pl">
   <LanguageSwitcher currentLang="en" enHref="/support/en" plHref="/support/pl" />
-  <Header title={supportContent.en.title} draftLabel="Draft" versionLabel={site.version} updatedLabel={site.updated} />
-  <SupportPage intro={supportContent.en.intro} sections={supportContent.en.sections} />
-  <Footer product={site.product} operator={site.operator} email={site.email} />
+  <Header title={supportContent.en.title} versionLabel={supportContent.en.versionLabel} updatedLabel={supportContent.en.updatedLabel} updatedValue={supportContent.en.updatedValue} />
+  <SupportPage intro={supportContent.en.intro} sections={supportContent.en.sections} pageLabel={supportContent.en.pageLabel} />
+  <Footer product="Nurtly" operator="GRAY LION ŁUKASZ CHMIEL" email="nurtly@graylion.pl" />
 </BaseLayout>

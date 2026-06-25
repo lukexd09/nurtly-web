@@ -17,6 +17,9 @@ export const privacyContent = {
     title: "Nurtly Privacy Policy",
     description: "Nurtly privacy policy for English users.",
     pageLabel: "Privacy policy",
+    versionLabel: "Version:",
+    updatedLabel: "Effective date:",
+    updatedValue: "25 June 2026",
     intro:
       "This Privacy Policy explains how Nurtly handles data in the current MVP. Nurtly is designed to keep journal content on the device and to rely only on the services described below.",
     sections: [
@@ -52,6 +55,9 @@ export const privacyContent = {
     title: "Polityka prywatności Nurtly",
     description: "Polityka prywatności Nurtly dla użytkowników w języku polskim.",
     pageLabel: "Polityka prywatności",
+    versionLabel: "Wersja:",
+    updatedLabel: "Data wejścia w życie:",
+    updatedValue: "25 czerwca 2026 r.",
     intro:
       "Ta Polityka prywatności wyjaśnia, jak Nurtly przetwarza dane w obecnym MVP. Nurtly jest zaprojektowane tak, aby Dziennik pozostawał na urządzeniu i aby opierać się wyłącznie na usługach opisanych poniżej.",
     sections: [

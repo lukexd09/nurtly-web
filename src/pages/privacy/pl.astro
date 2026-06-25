@@ -5,11 +5,10 @@ import Footer from "../../components/Footer.astro";
 import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
 import PolicyPage from "../../components/PolicyPage.astro";
 import { privacyContent } from "../../data/privacy";
-import { site } from "../../data/site";
 ---
 <BaseLayout title={privacyContent.pl.title} description={privacyContent.pl.description} lang="pl" path="/privacy/pl" hreflangEn="/privacy/en" hreflangPl="/privacy/pl" xDefault="/privacy">
   <LanguageSwitcher currentLang="pl" enHref="/privacy/en" plHref="/privacy/pl" />
-  <Header title={privacyContent.pl.title} versionLabel={site.version} updatedLabel={site.updated} />
+  <Header title={privacyContent.pl.title} versionLabel={privacyContent.pl.versionLabel} updatedLabel={privacyContent.pl.updatedLabel} updatedValue={privacyContent.pl.updatedValue} />
   <PolicyPage intro={privacyContent.pl.intro} sections={privacyContent.pl.sections} pageLabel={privacyContent.pl.pageLabel} />
-  <Footer product={site.product} operator={site.operator} email={site.email} />
+  <Footer product="Nurtly" operator="GRAY LION ŁUKASZ CHMIEL" email="nurtly@graylion.pl" />
 </BaseLayout>

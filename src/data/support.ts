@@ -8,6 +8,9 @@ export const supportContent = {
     title: "Nurtly Support",
     description: "Support information for Nurtly.",
     pageLabel: "Support",
+    versionLabel: "Version:",
+    updatedLabel: "Effective date:",
+    updatedValue: "25 June 2026",
     intro: { kind: "rich", segments: [text("For help, write to "), link("nurtly@graylion.pl", "mailto:nurtly@graylion.pl"), text(" and include the details below.")] },
     sections: [
       { heading: "What to include", body: { kind: "text", value: "Please send your device model, Android version, app version, a clear description of the problem, and the steps that lead to the bug." } },
@@ -24,6 +27,9 @@ export const supportContent = {
     title: "Wsparcie Nurtly",
     description: "Informacje wsparcia dla Nurtly.",
     pageLabel: "Wsparcie",
+    versionLabel: "Wersja:",
+    updatedLabel: "Data wejścia w życie:",
+    updatedValue: "25 czerwca 2026 r.",
     intro: { kind: "rich", segments: [text("W sprawach pomocy napisz na "), link("nurtly@graylion.pl", "mailto:nurtly@graylion.pl"), text(" i podaj poniższe informacje.")] },
     sections: [
       { heading: "Co podać", body: { kind: "text", value: "Podaj model urządzenia, wersję Androida, wersję aplikacji, jasny opis problemu oraz kroki prowadzące do błędu." } },

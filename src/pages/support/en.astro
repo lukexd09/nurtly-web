@@ -10,6 +10,6 @@ import { site } from "../../data/site";
 <BaseLayout title={supportContent.en.title} description={supportContent.en.description} lang="en" path="/support/en" hreflangEn="/support/en" hreflangPl="/support/pl">
   <LanguageSwitcher currentLang="en" enHref="/support/en" plHref="/support/pl" />
   <Header title={supportContent.en.title} versionLabel={site.version} updatedLabel={site.updated} />
-  <SupportPage intro={supportContent.en.intro} sections={supportContent.en.sections} />
+  <SupportPage intro={supportContent.en.intro} sections={supportContent.en.sections} pageLabel={supportContent.en.pageLabel} />
   <Footer product={site.product} operator={site.operator} email={site.email} />
 </BaseLayout>

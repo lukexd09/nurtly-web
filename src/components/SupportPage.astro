@@ -1,13 +1,41 @@
 ---
-const { intro, sections } = Astro.props;
+const { intro, sections, pageLabel } = Astro.props;
 ---
 <main class="card">
-  <p style="margin-top: 0; color: var(--sage-dark); font-weight: 700;">Support</p>
-  <p>{intro}</p>
+  <p style="margin-top: 0; color: var(--sage-dark); font-weight: 700;">{pageLabel}</p>
+  <p>
+    {intro.kind === "rich" ? (
+      intro.segments.map((segment) =>
+        segment.type === "link" ? (
+          <a href={segment.href} target={segment.href.startsWith("http") ? "_blank" : undefined} rel={segment.href.startsWith("http") ? "noopener noreferrer" : undefined}>
+            {segment.value}
+          </a>
+        ) : (
+          segment.value
+        ),
+      )
+    ) : (
+      intro.value
+    )}
+  </p>
   {sections.map((section) => (
     <section style="margin-top: 1.25rem;">
       <h2 style="margin-bottom: 0.5rem; font-size: 1.2rem;">{section.heading}</h2>
-      <p style="margin: 0; color: var(--text);">{section.body}</p>
+      {section.body.kind === "rich" ? (
+        <p style="margin: 0; color: var(--text);">
+          {section.body.segments.map((segment) =>
+            segment.type === "link" ? (
+              <a href={segment.href} target={segment.href.startsWith("http") ? "_blank" : undefined} rel={segment.href.startsWith("http") ? "noopener noreferrer" : undefined}>
+                {segment.value}
+              </a>
+            ) : (
+              segment.value
+            ),
+          )}
+        </p>
+      ) : (
+        <p style="margin: 0; color: var(--text);">{section.body.value}</p>
+      )}
     </section>
   ))}
 </main>

@@ -6,6 +6,7 @@ const {
   path,
   hreflangEn,
   hreflangPl,
+  xDefault,
 } = Astro.props;
 ---
 <!doctype html>
@@ -18,7 +19,7 @@ const {
     <link rel="canonical" href={`https://nurtly.graylion.pl${path}`} />
     <link rel="alternate" hreflang="en" href={`https://nurtly.graylion.pl${hreflangEn}`} />
     <link rel="alternate" hreflang="pl" href={`https://nurtly.graylion.pl${hreflangPl}`} />
-    <link rel="alternate" hreflang="x-default" href={`https://nurtly.graylion.pl${path === "/" ? "/privacy" : path}`} />
+    {xDefault && <link rel="alternate" hreflang="x-default" href={`https://nurtly.graylion.pl${xDefault}`} />}
     <style>
       :root {
         color-scheme: light;

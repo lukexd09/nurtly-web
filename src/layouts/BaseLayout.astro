@@ -15,9 +15,10 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={path} />
-    <link rel="alternate" hreflang="en" href={hreflangEn} />
-    <link rel="alternate" hreflang="pl" href={hreflangPl} />
+    <link rel="canonical" href={`https://nurtly.graylion.pl${path}`} />
+    <link rel="alternate" hreflang="en" href={`https://nurtly.graylion.pl${hreflangEn}`} />
+    <link rel="alternate" hreflang="pl" href={`https://nurtly.graylion.pl${hreflangPl}`} />
+    <link rel="alternate" hreflang="x-default" href={`https://nurtly.graylion.pl${path === "/" ? "/privacy" : path}`} />
     <style>
       :root {
         color-scheme: light;
@@ -32,55 +33,39 @@ const {
         --link: #355c6d;
         --focus: #1d4ed8;
       }
-
       html {
         background: var(--bg);
         color: var(--text);
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         line-height: 1.6;
       }
-
       body {
         margin: 0;
         min-height: 100vh;
         background: var(--bg);
+        color: var(--text);
       }
-
-      a {
-        color: var(--link);
-      }
-
-      a:hover {
-        color: var(--sage-dark);
-      }
-
+      a { color: var(--link); }
+      a:hover { color: var(--sage-dark); }
       a:focus-visible,
       button:focus-visible {
         outline: 3px solid var(--focus);
         outline-offset: 2px;
       }
-
       .shell {
         max-width: 800px;
         margin: 0 auto;
         padding: 1rem;
       }
-
       .card {
         background: var(--panel);
         border: 1px solid var(--border);
         border-radius: 16px;
         padding: 1rem;
       }
-
       @media (min-width: 720px) {
-        .shell {
-          padding: 2rem;
-        }
-
-        .card {
-          padding: 1.5rem;
-        }
+        .shell { padding: 2rem; }
+        .card { padding: 1.5rem; }
       }
     </style>
   </head>

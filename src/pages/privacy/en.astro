@@ -9,7 +9,7 @@ import { site } from "../../data/site";
 ---
 <BaseLayout title={privacyContent.en.title} description={privacyContent.en.description} lang="en" path="/privacy/en" hreflangEn="/privacy/en" hreflangPl="/privacy/pl">
   <LanguageSwitcher currentLang="en" enHref="/privacy/en" plHref="/privacy/pl" />
-  <Header title={privacyContent.en.title} draftLabel="Draft" versionLabel={site.version} updatedLabel={site.updated} />
+  <Header title={privacyContent.en.title} versionLabel={site.version} updatedLabel={site.updated} />
   <PolicyPage intro={privacyContent.en.intro} sections={privacyContent.en.sections} />
   <Footer product={site.product} operator={site.operator} email={site.email} />
 </BaseLayout>

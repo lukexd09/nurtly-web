@@ -1,12 +1,11 @@
 ---
-const { title, draftLabel, versionLabel, updatedLabel } = Astro.props;
+const { title, versionLabel, updatedLabel } = Astro.props;
 ---
 <header class="card" style="margin-bottom: 1rem;">
-  <p style="margin: 0 0 0.5rem; color: var(--sage-dark); font-weight: 700;">{draftLabel}</p>
   <h1 style="margin: 0 0 0.5rem; font-size: clamp(1.8rem, 4vw, 2.4rem); line-height: 1.15;">{title}</h1>
   <p style="margin: 0; color: var(--muted);">
     <strong>Version:</strong> {versionLabel}
     <span aria-hidden="true"> · </span>
-    <strong>Last updated:</strong> {updatedLabel}
+    <strong>Effective date:</strong> {updatedLabel}
   </p>
 </header>

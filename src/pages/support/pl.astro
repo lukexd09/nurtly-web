@@ -9,7 +9,7 @@ import { site } from "../../data/site";
 ---
 <BaseLayout title={supportContent.pl.title} description={supportContent.pl.description} lang="pl" path="/support/pl" hreflangEn="/support/en" hreflangPl="/support/pl">
   <LanguageSwitcher currentLang="pl" enHref="/support/en" plHref="/support/pl" />
-  <Header title={supportContent.pl.title} draftLabel="Draft" versionLabel={site.version} updatedLabel={site.updated} />
+  <Header title={supportContent.pl.title} versionLabel={site.version} updatedLabel={site.updated} />
   <SupportPage intro={supportContent.pl.intro} sections={supportContent.pl.sections} />
   <Footer product={site.product} operator={site.operator} email={site.email} />
 </BaseLayout>

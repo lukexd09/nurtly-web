@@ -1,5 +1,6 @@
 const externalLinks = {
   privacyPolicy: "https://policies.google.com/privacy?hl=en",
+  mobileAds: "https://developers.google.com/admob",
   ump: "https://developers.google.com/admob/ump",
   play: "https://play.google.com/about/",
   billing: "https://developer.android.com/google/play/billing",
@@ -13,15 +14,15 @@ const text = (value: string): Segment => ({ type: "text", value });
 export const privacyContent = {
   en: {
     title: "Nurtly Privacy Policy",
-    description: "Nurtly privacy policy, version 1.1, effective 13 July 2026.",
+    description: "Nurtly privacy policy, version 1.1, effective 14 July 2026.",
     pageLabel: "Privacy policy",
     versionLabel: "Version:",
     updatedLabel: "Effective date:",
-    updatedValue: "13 July 2026",
+    updatedValue: "14 July 2026",
     intro:
       "This Privacy Policy explains how Nurtly handles data in the current MVP. Nurtly is designed for adults who are parents or caregivers, keeps core journal data on the device, and relies only on the services described below.",
     sections: [
-      { heading: "1. Title, version, and effective date", body: { kind: "text", value: "Version 1.1. Effective date: 13 July 2026." } },
+      { heading: "1. Title, version, and effective date", body: { kind: "text", value: "Version 1.1. Effective date: 14 July 2026." } },
       {
         heading: "2. About the operator",
         body: {
@@ -34,7 +35,15 @@ export const privacyContent = {
         },
       },
       {
-        heading: "3. Intended audience",
+        heading: "3. Scope",
+        body: {
+          kind: "text",
+          value:
+            "This policy applies to the Nurtly mobile app and the data handling described here. It does not cover services outside the app or terms controlled by third parties.",
+        },
+      },
+      {
+        heading: "4. Intended audience",
         body: {
           kind: "text",
           value:
@@ -42,58 +51,74 @@ export const privacyContent = {
         },
       },
       {
-        heading: "4. Local data and storage",
+        heading: "5. Child-related data and limits",
         body: {
           kind: "text",
           value:
-            "Nurtly has no user account, no sign-in, no backend, no cloud sync, and no Nurtly cloud-backup service. Journal entries, saved language, and local reviewer-access state are stored on the device. Journal content is not sent to Gray Lion, ads, billing, analytics, crash reporting, or a Nurtly backend.",
+            "Nurtly does not require a child account, a child name, or an exact date of birth. Age ranges shown in activity content are content metadata, not a child profile. The app is not a medical product and does not provide diagnosis, treatment, or guaranteed developmental outcomes.",
         },
       },
       {
-        heading: "5. Android backup and device transfer",
+        heading: "6. Data stored locally",
         body: {
           kind: "text",
           value:
-            "The Android app is configured to exclude Nurtly-owned local app data from Android cloud backup and device-to-device transfer. Nurtly does not intentionally copy Journal data between devices.",
+            "Nurtly has no user account, no sign-in, no registration, and no backend. Journal data is stored locally on the device. Journal data may include notes, sleep start and end times, feeding type, optional feeding quantity, diaper type, event timestamp, and an optional internal child identifier. The app language is also stored locally.",
         },
       },
       {
-        heading: "6. Journal deletion",
+        heading: "7. Journal and entry types",
         body: {
           kind: "text",
-          value:
-            "Deleting a Journal entry removes it from the active app state and from local storage. Older soft-deleted entries are cleaned up during a compatibility migration when the app loads.",
+          value: "Journal entries are created and read on the device to operate the app. They are not sent to Gray Lion.",
         },
       },
       {
-        heading: "7. Delete all local data",
+        heading: "8. No account and no cloud sync",
         body: {
           kind: "text",
-          value:
-            "Delete all local data removes all Journal entries, saved language, and local reviewer-access state. It does not remove Google Play purchase history, Google Play subscriptions, Premium entitlement, Google UMP consent state, or Google-managed advertising and billing records. Privacy choices remain available through the separate privacy-choices flow where required. When part of the deletion fails, the app reports partial completion and allows a safe retry.",
+          value: "Nurtly does not offer cloud sync and does not maintain an online Nurtly account system.",
         },
       },
       {
-        heading: "8. Ads and UMP",
+        heading: "9. Google Mobile Ads",
         body: {
           kind: "rich",
           segments: [
-            text("The MVP uses banner ads only, Premium remains ad-free, and ads are requested only after the UMP flow confirms that ads may be requested. Privacy choices can be reopened where UMP requires it. Nurtly does not use Journal content for advertising. Official information: "),
+            text("The free version may show passive Google Mobile Ads banners. Premium does not show ads. Official information: "),
+            link("Google Mobile Ads", externalLinks.mobileAds),
+            text("."),
+          ],
+        },
+      },
+      {
+        heading: "10. Google UMP and privacy choices",
+        body: {
+          kind: "rich",
+          segments: [
+            text("Google UMP is used where required to manage privacy choices. Ads are not initialized or loaded before the consent flow confirms that ads may be requested. If the app exposes it in Privacy & Data, users can reopen privacy choices. Official information: "),
             link("Google UMP", externalLinks.ump),
             text("."),
           ],
         },
       },
       {
-        heading: "9. Advertising identifiers",
+        heading: "11. Advertising ID",
         body: {
           kind: "text",
-          value:
-            "Google Mobile Ads may process advertising or device identifiers according to the final Android build, device settings, consent state, and Google's terms. Nurtly does not use Journal content for advertising.",
+          value: "Google Mobile Ads may process advertising or device identifiers according to the final Android build, device settings, consent state, and Google's terms.",
         },
       },
       {
-        heading: "10. Purchases and subscriptions",
+        heading: "12. Ads and ad data",
+        body: {
+          kind: "text",
+          value:
+            "The MVP uses banner ads only. Nurtly does not use Journal content for advertising. The app requests ads only after the UMP flow confirms that ads may be requested.",
+        },
+      },
+      {
+        heading: "13. Purchases and subscriptions",
         body: {
           kind: "rich",
           segments: [
@@ -106,15 +131,14 @@ export const privacyContent = {
         },
       },
       {
-        heading: "11. Analytics and crash reporting",
+        heading: "14. Analytics and crash reporting",
         body: {
           kind: "text",
-          value:
-            "Nurtly does not use a product analytics SDK or a crash-reporting SDK. The app does not send Journal telemetry or Journal content to analytics services.",
+          value: "Nurtly does not use an analytics SDK or a crash-reporting SDK. The journal is not used for analytics, and Nurtly does not collect product telemetry in the current MVP.",
         },
       },
       {
-        heading: "12. External services",
+        heading: "15. External services",
         body: {
           kind: "rich",
           segments: [
@@ -125,7 +149,22 @@ export const privacyContent = {
         },
       },
       {
-        heading: "13. Retention",
+        heading: "16. Purposes and bases",
+        body: {
+          kind: "text",
+          value:
+            "Local journal processing happens on the device at the user's request so the app can function. Gray Lion does not receive journal content. Billing is used to complete requested purchases or subscriptions and to meet legal obligations. Nurtly does not state that personalized ads are currently active. Limited or non-personalized ads and anti-fraud or security processing may rely on other bases used by the provider.",
+        },
+      },
+      {
+        heading: "17. Data recipients",
+        body: {
+          kind: "text",
+          value: "Recipients may include Google and its service providers for ads, privacy choices, and billing. Gray Lion is the operator, but it does not receive journal content from the app.",
+        },
+      },
+      {
+        heading: "18. Retention",
         body: {
           kind: "text",
           value:
@@ -133,39 +172,83 @@ export const privacyContent = {
         },
       },
       {
-        heading: "14. Changes to this policy",
+        heading: "19. Deleting data",
         body: {
           kind: "text",
           value:
-            "We may update this policy when the app or service setup changes. The version and effective date above show the current release.",
+            "The app includes Delete all local data, which removes journal entries, saved language, and the local app access setting. It does not remove Google Play purchase history or subscriptions.",
         },
       },
       {
-        heading: "15. Contact",
+        heading: "20. Security of local storage",
+        body: {
+          kind: "text",
+          value: "Nurtly uses local storage only for the current MVP. Because data stays on the device, users should protect their device with Android security features.",
+        },
+      },
+      {
+        heading: "21. Android backup and restore",
+        body: {
+          kind: "text",
+          value:
+            "Nurtly is configured to exclude Nurtly-owned local app data from Android cloud backup and device-to-device transfer. Nurtly does not rely on Android backup or restore to preserve Journal content between devices.",
+        },
+      },
+      {
+        heading: "22. International processing by third parties",
+        body: {
+          kind: "text",
+          value: "Google and other providers may process data internationally according to their own infrastructure and privacy terms.",
+        },
+      },
+      {
+        heading: "23. User rights",
         body: {
           kind: "rich",
           segments: [
-            text("For privacy questions, contact "),
+            text("Depending on applicable law, users may have rights to access, correct, delete, restrict, or object to processing, and to withdraw consent where consent is the basis. Requests about Nurtly should be sent to "),
             link("nurtly@graylion.pl", "mailto:nurtly@graylion.pl"),
             text("."),
           ],
+        },
+      },
+      {
+        heading: "24. Children's privacy",
+        body: {
+          kind: "text",
+          value:
+            "Nurtly is intended for adult parents and caregivers. It is not intended for independent use by children. The app does not ask a child to create an account and does not require the child's name or exact date of birth.",
+        },
+      },
+      {
+        heading: "25. Changes to this policy",
+        body: {
+          kind: "text",
+          value: "We may update this policy when the app or service setup changes. The version and effective date above show the current release.",
+        },
+      },
+      {
+        heading: "26. Contact",
+        body: {
+          kind: "rich",
+          segments: [text("For privacy questions, contact "), link("nurtly@graylion.pl", "mailto:nurtly@graylion.pl"), text(".")],
         },
       },
     ],
   },
   pl: {
     title: "Polityka prywatności Nurtly",
-    description: "Polityka prywatności Nurtly, wersja 1.1, obowiązuje od 13 lipca 2026 r.",
+    description: "Polityka prywatności Nurtly, wersja 1.1, obowiązuje od 14 lipca 2026 r.",
     pageLabel: "Polityka prywatności",
     versionLabel: "Wersja:",
     updatedLabel: "Data wejścia w życie:",
-    updatedValue: "13 lipca 2026 r.",
+    updatedValue: "14 lipca 2026 r.",
     intro:
       "Ta Polityka prywatności wyjaśnia, jak Nurtly przetwarza dane w obecnym MVP. Nurtly jest przeznaczone dla dorosłych rodziców i opiekunów, przechowuje podstawowe dane Dziennika na urządzeniu i korzysta wyłącznie z usług opisanych poniżej.",
     sections: [
       {
         heading: "1. Tytuł, wersja i data wejścia w życie",
-        body: { kind: "text", value: "Wersja 1.1. Data wejścia w życie: 13 lipca 2026 r." },
+        body: { kind: "text", value: "Wersja 1.1. Data wejścia w życie: 14 lipca 2026 r." },
       },
       {
         heading: "2. Informacje o operatorze",
@@ -179,7 +262,15 @@ export const privacyContent = {
         },
       },
       {
-        heading: "3. Odbiorcy aplikacji",
+        heading: "3. Zakres polityki",
+        body: {
+          kind: "text",
+          value:
+            "Niniejsza polityka dotyczy aplikacji mobilnej Nurtly oraz opisanego tutaj przetwarzania danych. Nie obejmuje usług poza aplikacją ani warunków kontrolowanych przez podmioty trzecie.",
+        },
+      },
+      {
+        heading: "4. Odbiorcy aplikacji",
         body: {
           kind: "text",
           value:
@@ -187,58 +278,74 @@ export const privacyContent = {
         },
       },
       {
-        heading: "4. Dane lokalne i przechowywanie",
+        heading: "5. Dane związane z dzieckiem i ograniczenia",
         body: {
           kind: "text",
           value:
-            "Nurtly nie ma konta użytkownika, logowania, backendu, synchronizacji chmurowej ani usługi kopii zapasowej w chmurze Nurtly. Wpisy Dziennika, zapisany język i lokalny stan dostępu recenzenckiego są przechowywane na urządzeniu. Treść Dziennika nie jest wysyłana do Gray Lion, reklam, płatności, analityki, raportowania awarii ani backendu Nurtly.",
+            "Nurtly nie wymaga konta dziecka, imienia dziecka ani dokładnej daty urodzenia. Zakresy wiekowe w treści aktywności są metadanymi treści, a nie profilem dziecka. Aplikacja nie jest produktem medycznym i nie zapewnia diagnozy, leczenia ani gwarantowanych efektów rozwojowych.",
         },
       },
       {
-        heading: "5. Kopia zapasowa Android i transfer między urządzeniami",
+        heading: "6. Dane przechowywane lokalnie",
         body: {
           kind: "text",
           value:
-            "Aplikacja Android jest skonfigurowana tak, aby wykluczać lokalne dane należące do Nurtly z kopii zapasowej Android w chmurze oraz z transferu między urządzeniami. Nurtly nie kopiuje celowo danych Dziennika między urządzeniami.",
+            "Nurtly nie ma konta użytkownika, logowania, rejestracji ani backendu. Dane Dziennika są przechowywane lokalnie na urządzeniu. Dane Dziennika mogą obejmować notatki, czas rozpoczęcia i zakończenia snu, typ karmienia, opcjonalną ilość karmienia, typ pieluchy, datę i godzinę zdarzenia oraz opcjonalny wewnętrzny identyfikator dziecka. Język aplikacji jest także przechowywany lokalnie.",
         },
       },
       {
-        heading: "6. Usuwanie pojedynczego wpisu Dziennika",
+        heading: "7. Dziennik i typy wpisów",
         body: {
           kind: "text",
-          value:
-            "Usunięcie wpisu Dziennika usuwa go z aktywnego stanu aplikacji i z lokalnego przechowywania. Starsze usunięte wpisy są porządkowane podczas migracji zgodności przy uruchomieniu aplikacji.",
+          value: "Wpisy Dziennika są tworzone i odczytywane na urządzeniu w celu działania aplikacji. Nie są przesyłane do Gray Lion.",
         },
       },
       {
-        heading: "7. Usuń wszystkie dane lokalne",
+        heading: "8. Brak konta i synchronizacji chmurowej",
         body: {
           kind: "text",
-          value:
-            "Opcja Usuń wszystkie dane lokalne usuwa wszystkie wpisy Dziennika, zapisany język i lokalny stan dostępu recenzenckiego. Nie usuwa historii zakupów Google Play, subskrypcji Google Play, uprawnień Premium, stanu zgody Google UMP ani danych reklamowych i rozliczeniowych zarządzanych przez Google. Ustawienia prywatności pozostają dostępne w osobnym przepływie ustawień prywatności, gdy jest to wymagane. Gdy część operacji się nie powiedzie, aplikacja zgłasza częściowe zakończenie i pozwala bezpiecznie ponowić próbę.",
+          value: "Nurtly nie oferuje synchronizacji chmurowej ani systemu kont online Nurtly.",
         },
       },
       {
-        heading: "8. Reklamy i UMP",
+        heading: "9. Reklamy Google Mobile Ads",
         body: {
           kind: "rich",
           segments: [
-            text("MVP używa wyłącznie banerów reklamowych, Premium pozostaje bez reklam, a reklamy są żądane dopiero po tym, jak przepływ UMP potwierdzi możliwość ich pobrania. Ustawienia prywatności reklam można ponownie otworzyć tam, gdzie wymaga tego UMP. Nurtly nie używa treści Dziennika do reklam. Oficjalne informacje: "),
+            text("Darmowa wersja może wyświetlać pasywne banery Google Mobile Ads. Premium nie pokazuje reklam. Oficjalne informacje: "),
+            link("Google Mobile Ads", externalLinks.mobileAds),
+            text("."),
+          ],
+        },
+      },
+      {
+        heading: "10. Google UMP i ustawienia prywatności reklam",
+        body: {
+          kind: "rich",
+          segments: [
+            text("Google UMP służy do obsługi ustawień prywatności reklam tam, gdzie jest to wymagane. Reklamy nie są inicjalizowane ani ładowane przed potwierdzeniem przez mechanizm zgody, że mogą być żądane. Jeżeli opcja jest dostępna w Prywatność i dane, użytkownik może ponownie otworzyć ustawienia prywatności reklam. Oficjalne informacje: "),
             link("Google UMP", externalLinks.ump),
             text("."),
           ],
         },
       },
       {
-        heading: "9. Identyfikatory reklamowe",
+        heading: "11. Advertising ID",
         body: {
           kind: "text",
-          value:
-            "Google Mobile Ads może przetwarzać identyfikatory reklamowe lub identyfikatory urządzenia zgodnie z finalną kompilacją Android, ustawieniami urządzenia, stanem zgody i zasadami Google. Nurtly nie używa treści Dziennika do reklam.",
+          value: "Google Mobile Ads może przetwarzać identyfikatory reklamowe lub identyfikatory urządzenia zgodnie z finalną kompilacją Android, ustawieniami urządzenia, stanem zgody i zasadami Google.",
         },
       },
       {
-        heading: "10. Zakupy i subskrypcje",
+        heading: "12. Reklamy i dane reklamowe",
+        body: {
+          kind: "text",
+          value:
+            "MVP używa wyłącznie banerów reklamowych. Nurtly nie używa treści Dziennika do reklam. Aplikacja żąda reklam dopiero po tym, jak przepływ UMP potwierdzi możliwość ich pobrania.",
+        },
+      },
+      {
+        heading: "13. Zakupy i subskrypcje",
         body: {
           kind: "rich",
           segments: [
@@ -251,15 +358,15 @@ export const privacyContent = {
         },
       },
       {
-        heading: "11. Analityka i raportowanie awarii",
+        heading: "14. Analityka i raportowanie awarii",
         body: {
           kind: "text",
           value:
-            "Nurtly nie używa SDK analityki produktu ani SDK raportowania awarii. Aplikacja nie wysyła telemetryki Dziennika ani treści Dziennika do usług analitycznych.",
+            "Nurtly nie używa SDK analityki ani SDK raportowania awarii. Dziennik nie służy do analityki, a Nurtly nie zbiera telemetryki produktowej w obecnym MVP.",
         },
       },
       {
-        heading: "12. Usługi zewnętrzne",
+        heading: "15. Usługi zewnętrzne",
         body: {
           kind: "rich",
           segments: [
@@ -270,7 +377,23 @@ export const privacyContent = {
         },
       },
       {
-        heading: "13. Retencja",
+        heading: "16. Cele i podstawy przetwarzania",
+        body: {
+          kind: "text",
+          value:
+            "Lokalne przetwarzanie Dziennika odbywa się na urządzeniu na żądanie użytkownika, aby aplikacja mogła działać. Gray Lion nie otrzymuje treści Dziennika. Obsługa płatności służy realizacji żądanych zakupów lub subskrypcji oraz obowiązków prawnych. Nurtly nie stwierdza, że reklamy personalizowane są obecnie aktywne. Reklamy ograniczone lub niepersonalizowane oraz przetwarzanie antyfraudowe i bezpieczeństwa mogą opierać się na innych podstawach stosowanych przez dostawcę.",
+        },
+      },
+      {
+        heading: "17. Odbiorcy danych",
+        body: {
+          kind: "text",
+          value:
+            "Odbiorcami mogą być Google i jego dostawcy usług dla reklam, ustawień prywatności reklam i obsługi płatności. Gray Lion jest operatorem, ale nie otrzymuje treści Dziennika z aplikacji.",
+        },
+      },
+      {
+        heading: "18. Okres przechowywania",
         body: {
           kind: "text",
           value:
@@ -278,21 +401,67 @@ export const privacyContent = {
         },
       },
       {
-        heading: "14. Zmiany polityki",
+        heading: "19. Usuwanie danych",
+        body: {
+          kind: "text",
+          value:
+            "Aplikacja zawiera opcję Usuń wszystkie dane lokalne, która usuwa wpisy Dziennika, zapisany język i lokalne ustawienie dostępu w aplikacji. Nie usuwa historii zakupów Google Play ani subskrypcji.",
+        },
+      },
+      {
+        heading: "20. Bezpieczeństwo lokalnego przechowywania",
+        body: {
+          kind: "text",
+          value:
+            "Nurtly w obecnym MVP korzysta wyłącznie z lokalnego przechowywania. Ponieważ dane pozostają na urządzeniu, użytkownik powinien chronić urządzenie przy użyciu zabezpieczeń Androida.",
+        },
+      },
+      {
+        heading: "21. Kopia zapasowa i przywracanie Android",
+        body: {
+          kind: "text",
+          value:
+            "Nurtly jest skonfigurowane tak, aby wykluczać lokalne dane należące do Nurtly z kopii zapasowej Android w chmurze oraz z transferu między urządzeniami. Nurtly nie polega na kopii zapasowej ani przywracaniu Android, aby zachować treść Dziennika między urządzeniami.",
+        },
+      },
+      {
+        heading: "22. Przetwarzanie międzynarodowe przez dostawców zewnętrznych",
+        body: {
+          kind: "text",
+          value: "Google i inni dostawcy mogą przetwarzać dane międzynarodowo zgodnie z własną infrastrukturą i zasadami prywatności.",
+        },
+      },
+      {
+        heading: "23. Prawa użytkownika",
+        body: {
+          kind: "rich",
+          segments: [
+            text("W zależności od prawa użytkownik może mieć prawo do dostępu, sprostowania, usunięcia, ograniczenia lub sprzeciwu wobec przetwarzania oraz do wycofania zgody tam, gdzie zgoda stanowi podstawę. Prośby dotyczące Nurtly należy kierować na "),
+            link("nurtly@graylion.pl", "mailto:nurtly@graylion.pl"),
+            text("."),
+          ],
+        },
+      },
+      {
+        heading: "24. Prywatność dzieci",
+        body: {
+          kind: "text",
+          value:
+            "Nurtly jest przeznaczone dla dorosłych rodziców i opiekunów. Nie jest przeznaczone do samodzielnego używania przez dzieci. Aplikacja nie prosi dziecka o założenie konta i nie wymaga imienia dziecka ani dokładnej daty urodzenia.",
+        },
+      },
+      {
+        heading: "25. Zmiany polityki",
         body: {
           kind: "text",
           value: "Możemy aktualizować tę politykę, gdy zmienia się aplikacja lub konfiguracja usług. Wersja i data wejścia w życie wskazują bieżące wydanie.",
         },
       },
       {
-        heading: "15. Kontakt",
+        heading: "26. Kontakt",
         body: {
           kind: "rich",
-          segments: [
-            text("W sprawach prywatności napisz na "),
-            link("nurtly@graylion.pl", "mailto:nurtly@graylion.pl"),
-            text("."),
-          ],
+          segments: [text("W sprawach prywatności napisz na "), link("nurtly@graylion.pl", "mailto:nurtly@graylion.pl"), text(".")],
         },
       },
     ],

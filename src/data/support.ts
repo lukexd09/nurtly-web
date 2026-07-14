@@ -5,11 +5,11 @@ const text = (value: string): Segment => ({ type: "text", value });
 export const supportContent = {
   en: {
     title: "Nurtly Support",
-    description: "Support for local-data deletion, privacy choices, and Google Play issues.",
+    description: "Support for app troubleshooting, local-data deletion, privacy choices, and Google Play issues.",
     pageLabel: "Support",
     versionLabel: "Version:",
     updatedLabel: "Effective date:",
-    updatedValue: "13 July 2026",
+    updatedValue: "14 July 2026",
     intro: {
       kind: "rich",
       segments: [text("For help, write to "), link("nurtly@graylion.pl", "mailto:nurtly@graylion.pl"), text(" and include the details below.")],
@@ -30,11 +30,18 @@ export const supportContent = {
         },
       },
       {
+        heading: "Basic troubleshooting",
+        body: {
+          kind: "text",
+          value: "Try restarting the app, updating the app, restarting the device, and checking your internet connection for ads or payments.",
+        },
+      },
+      {
         heading: "Delete all local data",
         body: {
           kind: "text",
           value:
-            "Delete all local data removes Journal entries, saved language, and local reviewer-access state. It does not change Google Play purchase history, Premium entitlement, or Google UMP consent state. If the action reports partial completion, you can safely try it again later.",
+            "Delete all local data removes Journal entries, saved language, and the local app access setting. It does not change Google Play purchase history, Premium entitlement, or Google UMP consent state. If the action reports partial completion, you can safely try it again later.",
         },
       },
       {
@@ -73,11 +80,11 @@ export const supportContent = {
   },
   pl: {
     title: "Wsparcie Nurtly",
-    description: "Wsparcie dla usuwania danych lokalnych, ustawień prywatności i problemów z Google Play.",
+    description: "Wsparcie dla diagnozowania problemów, usuwania danych lokalnych, ustawień prywatności i problemów z Google Play.",
     pageLabel: "Wsparcie",
     versionLabel: "Wersja:",
     updatedLabel: "Data wejścia w życie:",
-    updatedValue: "13 lipca 2026 r.",
+    updatedValue: "14 lipca 2026 r.",
     intro: {
       kind: "rich",
       segments: [text("W sprawach pomocy napisz na "), link("nurtly@graylion.pl", "mailto:nurtly@graylion.pl"), text(" i podaj poniższe informacje.")],
@@ -98,11 +105,18 @@ export const supportContent = {
         },
       },
       {
+        heading: "Podstawowe kroki diagnostyczne",
+        body: {
+          kind: "text",
+          value: "Spróbuj ponownie uruchomić aplikację, zaktualizować aplikację, zrestartować urządzenie i sprawdzić połączenie internetowe dla reklam lub płatności.",
+        },
+      },
+      {
         heading: "Usuń wszystkie dane lokalne",
         body: {
           kind: "text",
           value:
-            "Opcja Usuń wszystkie dane lokalne usuwa wpisy Dziennika, zapisany język i lokalny stan dostępu recenzenckiego. Nie zmienia historii zakupów Google Play, uprawnień Premium ani stanu zgody Google UMP. Jeżeli operacja zakończy się częściowo, można ją bezpiecznie uruchomić ponownie później.",
+            "Opcja Usuń wszystkie dane lokalne usuwa wpisy Dziennika, zapisany język i lokalne ustawienie dostępu w aplikacji. Nie zmienia historii zakupów Google Play, uprawnień Premium ani stanu zgody Google UMP. Jeżeli operacja zakończy się częściowo, można ją bezpiecznie uruchomić ponownie później.",
         },
       },
       {

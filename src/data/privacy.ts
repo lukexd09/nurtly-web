@@ -153,7 +153,7 @@ export const privacyContent = {
         body: {
           kind: "text",
           value:
-            "Local journal processing happens on the device at the user's request so the app can function. Gray Lion does not receive journal content. Billing is used to complete requested purchases or subscriptions and to meet legal obligations. Nurtly does not state that personalized ads are currently active. Limited or non-personalized ads and anti-fraud or security processing may rely on other bases used by the provider.",
+            "Local journal processing happens on the device at the user's request so the app can function. Gray Lion does not receive journal content. Billing is used to complete requested purchases or subscriptions and to meet legal obligations. Banner requests are consent-gated through UMP. Google may process advertising or device identifiers depending on consent state, device settings, the final Android build, and Google's terms. Limited or non-personalized advertising and fraud or security processing may use provider-defined legal bases where applicable. Journal content is not used for advertising.",
         },
       },
       {
@@ -176,7 +176,7 @@ export const privacyContent = {
         body: {
           kind: "text",
           value:
-            "The app includes Delete all local data, which removes journal entries, saved language, and the local app access setting. It does not remove Google Play purchase history or subscriptions.",
+            "The app includes Delete all local data, which removes journal entries, saved language, and the local app access setting. It does not remove or alter Google Play purchase history, Google Play subscriptions, the real Premium entitlement managed through Google Play, Google UMP consent state, Google-managed advertising records, or Google-managed billing records. If some components are deleted successfully while another fails, the app reports partial completion and the operation can be retried safely.",
         },
       },
       {
@@ -381,7 +381,7 @@ export const privacyContent = {
         body: {
           kind: "text",
           value:
-            "Lokalne przetwarzanie Dziennika odbywa się na urządzeniu na żądanie użytkownika, aby aplikacja mogła działać. Gray Lion nie otrzymuje treści Dziennika. Obsługa płatności służy realizacji żądanych zakupów lub subskrypcji oraz obowiązków prawnych. Nurtly nie stwierdza, że reklamy personalizowane są obecnie aktywne. Reklamy ograniczone lub niepersonalizowane oraz przetwarzanie antyfraudowe i bezpieczeństwa mogą opierać się na innych podstawach stosowanych przez dostawcę.",
+            "Lokalne przetwarzanie Dziennika odbywa się na urządzeniu na żądanie użytkownika, aby aplikacja mogła działać. Gray Lion nie otrzymuje treści Dziennika. Obsługa płatności służy realizacji żądanych zakupów lub subskrypcji oraz obowiązków prawnych. Banery reklamowe są żądane dopiero po tym, jak przepływ UMP potwierdzi możliwość ich pobrania. Google może przetwarzać identyfikatory reklamowe lub urządzenia zależnie od stanu zgody, ustawień urządzenia, finalnej kompilacji Android i zasad Google. Reklamy ograniczone lub niepersonalizowane oraz przetwarzanie antyfraudowe i bezpieczeństwa mogą opierać się na innych podstawach stosowanych przez dostawcę, gdy ma to zastosowanie. Treść Dziennika nie jest używana do reklam.",
         },
       },
       {
@@ -405,7 +405,7 @@ export const privacyContent = {
         body: {
           kind: "text",
           value:
-            "Aplikacja zawiera opcję Usuń wszystkie dane lokalne, która usuwa wpisy Dziennika, zapisany język i lokalne ustawienie dostępu w aplikacji. Nie usuwa historii zakupów Google Play ani subskrypcji.",
+            "Aplikacja zawiera opcję Usuń wszystkie dane lokalne, która usuwa wpisy Dziennika, zapisany język i lokalne ustawienie dostępu w aplikacji. Nie usuwa ani nie zmienia historii zakupów Google Play, subskrypcji Google Play, prawdziwego uprawnienia Premium zarządzanego przez Google Play, stanu zgody Google UMP ani danych reklamowych i rozliczeniowych zarządzanych przez Google. Jeśli część elementów zostanie usunięta pomyślnie, a inna operacja się nie powiedzie, aplikacja zgłasza częściowe zakończenie i można bezpiecznie ponowić próbę.",
         },
       },
       {

@@ -1,10 +1,10 @@
 ---
-const { title, versionLabel, updatedLabel, updatedValue } = Astro.props;
+const { title, version, versionLabel, updatedLabel, updatedValue } = Astro.props;
 ---
 <header class="card" style="margin-bottom: 1rem;">
   <h1 style="margin: 0 0 0.5rem; font-size: clamp(1.8rem, 4vw, 2.4rem); line-height: 1.15;">{title}</h1>
   <p style="margin: 0; color: var(--muted);">
-    <strong>{versionLabel}</strong> 1.0
+    <strong>{versionLabel}</strong> {version}
     <span aria-hidden="true"> · </span>
     <strong>{updatedLabel}</strong> {updatedValue}
   </p>
